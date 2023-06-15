@@ -110,37 +110,47 @@
                                     <!-- <span class="space">|</span> -->
                                     <span class="comments-count">Time: 02:00 p.m. - 04:00 p.m.</span>
                                     <span class="space">|</span>
-                                    <span class="comments-count"><a href="https://forms.gle/r7ek8tfqKw5NubWs5" target="_blank">Register Now</a></span>
+                                    <span class="comments-count"><button onclick="register('dance.html')"
+                                            target="_blank">Register Now</button></span>
                                 </div>
                                 <!-- entry-meta -->
 
                                 <div class="entry-description">
                                     <p>
-                                        <strong>The stage is set for fiery performances, cut-throat competition, graceful
-                                        movements, and a beautiful display of the visual symphony that is Dance. Put
-                                        on your dancing shoes as ”Nrityaananda” provides an opportunity to be
-                                        yourself and let your inner performer shine bright. </strong>
-                                        <ul>
-                                            <li>Entrants confirm that everyone whose submission is featured in the contest entry has given consent for the use of his/her submission in connection with this Contest and in accordance with these Terms and Conditions.</li>
-                                            <li>
-                                                <ul>
-                                                    <li>All artists will retain full ownership of their submissions but, by entering, you agree to allow us to use the entries in the promotion of the Infin8. Any personal information collected from the participants
-                                                        will be used only for the purposes of administering the contest.</li>
-                                                    <li>The decision of the organising committee and the jury will be final.</li>
-                                                </ul>
-                                            </li>
-                                            <li>Mode: Offline</li>
-                                            <li>Rules:
-                                                <ul>
-                                                    <li>This is a solo and duo participation event.</li>
-                                                    <li>The performance should not exceed 5 minutes.</li>
-                                                    <li>We believe in art beyond boundaries. All genres are accepted.</li>
-                                                    <li>The vulgarity of any kind with respect to dance moves/costumes will lead to disqualification.
-                                                    </li>
-                                                    <li>Results will be announced on our Instagram handle.</li>
-                                                </ul>
-                                            </li>
-                                        </ul>
+                                        <strong>The stage is set for fiery performances, cut-throat competition,
+                                            graceful
+                                            movements, and a beautiful display of the visual symphony that is Dance. Put
+                                            on your dancing shoes as ”Nrityaananda” provides an opportunity to be
+                                            yourself and let your inner performer shine bright. </strong>
+                                    <ul>
+                                        <li>Entrants confirm that everyone whose submission is featured in the contest
+                                            entry has given consent for the use of his/her submission in connection with
+                                            this Contest and in accordance with these Terms and Conditions.</li>
+                                        <li>
+                                            <ul>
+                                                <li>All artists will retain full ownership of their submissions but, by
+                                                    entering, you agree to allow us to use the entries in the promotion
+                                                    of the Infin8. Any personal information collected from the
+                                                    participants
+                                                    will be used only for the purposes of administering the contest.
+                                                </li>
+                                                <li>The decision of the organising committee and the jury will be final.
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>Mode: Offline</li>
+                                        <li>Rules:
+                                            <ul>
+                                                <li>This is a solo and duo participation event.</li>
+                                                <li>The performance should not exceed 5 minutes.</li>
+                                                <li>We believe in art beyond boundaries. All genres are accepted.</li>
+                                                <li>The vulgarity of any kind with respect to dance moves/costumes will
+                                                    lead to disqualification.
+                                                </li>
+                                                <li>Results will be announced on our Instagram handle.</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
                                     </p>
                                 </div>
                                 <!-- entry-description -->
@@ -184,12 +194,15 @@
                     <div class="col-12 col 12">
                         <div class="entry-mail">
                             <p>Contact Us:&nbsp;<br>
-                                <a href="https://www.facebook.com/iiitb.infin8/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                                <a href="https://www.instagram.com/infin8_iiitb/" target="_blank"><i class="fab fa-instagram"></i></a>
+                                <a href="https://www.facebook.com/iiitb.infin8/" target="_blank"><i
+                                        class="fab fa-facebook-f"></i></a>
+                                <a href="https://www.instagram.com/infin8_iiitb/" target="_blank"><i
+                                        class="fab fa-instagram"></i></a>
                                 <a href="mailto:sac@iiitb.ac.in" target="_blank"><i class="fa fa-envelope"></i></a><br>
 
                                 <a href="Tel:+919429653848">9429653848</a>|&nbsp;
-                                <a href="Tel:+918688125240">8688125240</a></p>
+                                <a href="Tel:+918688125240">8688125240</a>
+                            </p>
                         </div class="entry-mail">
                     </div>
                 </div>
@@ -202,15 +215,37 @@
                     Copyright &copy;
                     <script>
                         document.write(new Date().getFullYear());
-                    </script> All rights reserved | Made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://zense.co.in/" target="_blank"><b>Zense</b></a>
+                    </script> All rights reserved | Made with <i class="fa fa-heart" aria-hidden="true"></i> by <a
+                        href="https://zense.co.in/" target="_blank"><b>Zense</b></a>
                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                 </div>
                 <!-- copyright-info -->
             </div>
         </div>
     </footer>
-    <!-- site-footer -->
+    <!-- firebase init -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-app.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+            https://firebase.google.com/docs/web/setup#config-web-app -->
+    <script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-auth.js"></script>
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyDWfHPnmzO1izx_jFIepHCoVQuGevws_04",
+            authDomain: "spandan-c4c19.firebaseapp.com",
+            projectId: "spandan-c4c19",
+            storageBucket: "spandan-c4c19.appspot.com",
+            messagingSenderId: "477956289858",
+            appId: "1:477956289858:web:f54676b7722ad7924d04db",
+            measurementId: "G-Z72CP1FDJJ"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
 
+    <script src="./js/event.js"></script>
+
+    <!-- site-footer -->
     <script type='text/javascript' src='js/jquery.js'></script>
     <script type='text/javascript' src='js/masonry.pkgd.min.js'></script>
     <script type='text/javascript' src='js/jquery.collapsible.min.js'></script>

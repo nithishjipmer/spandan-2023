@@ -2,77 +2,41 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Spandan 2023</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Spandan 2023</title>
 </head>
 
 <body>
-    <h2>Authentication</h2>
-    <div id="firebaseui-auth-container"></div>
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-app.js"></script>
-    <!-- TODO: Add SDKs for Firebase products that you want to use
+  <h2>Authentication</h2>
+  <div id="firebaseui-auth-container"></div>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-app.js"></script>
+  <!-- TODO: Add SDKs for Firebase products that you want to use
         https://firebase.google.com/docs/web/setup#config-web-app -->
-    <script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.3.3/firebase-auth.js"></script>
 
-    <!-- <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-analytics.js";
-        const firebaseConfig = {
-            apiKey: "AIzaSyDWfHPnmzO1izx_jFIepHCoVQuGevws_04",
-            authDomain: "spandan-c4c19.firebaseapp.com",
-            projectId: "spandan-c4c19",
-            storageBucket: "spandan-c4c19.appspot.com",
-            messagingSenderId: "477956289858",
-            appId: "1:477956289858:web:f54676b7722ad7924d04db",
-            measurementId: "G-Z72CP1FDJJ"
-        };
-        // Initialize Firebase
-        const app =  initializeApp(firebaseConfig);
-        const analytics = getAnalytics(app);
-    </script> -->
+  
 
-    <script>
-        const firebaseConfig = {
-            apiKey: "AIzaSyDWfHPnmzO1izx_jFIepHCoVQuGevws_04",
-            authDomain: "spandan-c4c19.firebaseapp.com",
-            projectId: "spandan-c4c19",
-            storageBucket: "spandan-c4c19.appspot.com",
-            messagingSenderId: "477956289858",
-            appId: "1:477956289858:web:f54676b7722ad7924d04db",
-            measurementId: "G-Z72CP1FDJJ"
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-    </script>
-    <!-- Firebase UI -->
-    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
-    <link
-      type="text/css"
-      rel="stylesheet"
-      href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css"
-    />
-
-    <script type="text/javascript">
-        var uiConfig = {
-          signInSuccessUrl: '/index.html',
-          signInOptions: [
-            firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-          ],
-          // tosUrl and privacyPolicyUrl accept either url string or a callback
-          // function.
-          // Terms of service url/callback.
-        //   tosUrl: '<your-tos-url>',
-          // Privacy policy url/callback.
-        //   privacyPolicyUrl: function() {
-        //     window.location.assign('<your-privacy-policy-url>');
-        //   }
-        };
-        var ui = new firebaseui.auth.AuthUI(firebase.auth());
-        ui.start('#firebaseui-auth-container', uiConfig);
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyDWfHPnmzO1izx_jFIepHCoVQuGevws_04",
+      authDomain: "spandan-c4c19.firebaseapp.com",
+      projectId: "spandan-c4c19",
+      storageBucket: "spandan-c4c19.appspot.com",
+      messagingSenderId: "477956289858",
+      appId: "1:477956289858:web:f54676b7722ad7924d04db",
+      measurementId: "G-Z72CP1FDJJ"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
   </script>
+  <!-- Firebase UI -->
+  <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+  <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+
+  <script type="text/javascript" src="./js/auth.js"></script>
 </body>
 
 </html>
