@@ -24,8 +24,9 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 const urlParams = new URLSearchParams(window.location.search);
-const prevPath = urlParams.get("path");
-if (prevPath === null) {
+let prevPath = urlParams.get("path");
+
+if (prevPath==="null") {
   prevPath = "index.html";
 }
 
@@ -49,7 +50,7 @@ function submitForm(e) {
   var number = getElementVal("number");
   var collegeName = getElementVal("collegeName");
   var year = getElementVal("year");
-
+  console.log(name, number, collegeName, year);
   saveMessages(name, number, collegeName, year);
 
   //   enable alert
@@ -83,3 +84,34 @@ const saveMessages = async (name, number, collegeName, year) => {
 const getElementVal = (id) => {
   return document.getElementById(id).value;
 };
+
+
+fetch('/js/colleges.csv')
+  .then(response => response.text())
+  .then(csvData => {
+    // Parse CSV data
+    const rows = csvData.split('\n');
+    const collegeNames = rows.map(row => row.split(',')[1]); // Assuming college names are in the first column
+   
+    // Filter college names based on user input
+    function filterColleges() {
+      const input = document.getElementById('collegeName');
+      const inputValue = input.value.toLowerCase();
+
+      const filteredColleges = collegeNames.filter(college => college.toLowerCase().startsWith(inputValue));
+      const collegeList = document.getElementById('collegeList');
+      // if(filteredColleges.length <2) return ;
+      collegeList.innerHTML = '';
+
+      // Add filtered colleges to the list
+      filteredColleges.forEach(college => {
+        const li = document.createElement('option');
+        li.textContent = college;
+        // li.value = college;
+        collegeList.appendChild(li);
+      });
+    }
+
+    // Bind filterColleges function to input event
+    document.getElementById('collegeName').addEventListener('input', filterColleges);
+  });

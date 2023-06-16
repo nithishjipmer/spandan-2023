@@ -40,9 +40,8 @@ body {
   overflow: hidden;
 }
 
-.inputBox input[type="text"],
-.inputBox input[type="email"],
-.inputBox input[type="number"] {
+.inputBox input,
+.inputBox select{
   width: 100%;
   height: 50px;
   border-radius: 5px;
