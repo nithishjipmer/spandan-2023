@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+    <style>
+        .card {
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+            padding-bottom: 0px;
+            border-radius: 14px;
+            float: right;
+        }
+
+        .bank {
+            text-align: center;
+            padding: 20px;
+            border-top: 1px solid #efefef;
+
+        }
+
+        .bank:nth-child(3) {
+            border-right: 1px solid #efefef;
+        }
+
+        .bank:nth-child(1) {
+            /* border-right: 1px solid #efefef; */
+        }
+        .bank:nth-child(5) {
+            border-right: 1px solid #efefef;
+        }
+        .bank:nth-child(7) {
+            border-right: 1px solid #efefef;
+        }
+
+        .icon {
+            margin: 0 auto;
+        }
+
+        .btext {
+            margin-top: 10px
+        }
+
+        .bank {
+            cursor: pointer;
+        }
+        .gradient{
+            background-image: linear-gradient( 83.2deg,  rgba(150,93,233,1) 10.8%, rgba(99,88,238,1) 94.3% );
+        }
+        .container{
+            border-radius: 20px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            border: 1px solid #ddd;
+        }
+         
+        h4{
+            color: rgba(0, 0, 0, 0.5);
+        }
+         
+         
+        
+    </style>
+</head>
+
+<body>
+    <div class="container  ">
+        <div class="row">
+
+            <div class="col  ">
+                <div class="row">
+                    <h1>Demo of Cashfree Hosted Checkout</h1>
+                </div>
+            </div>
+            <hr>
+            <div class="col offset-1 col-10">
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-lg-8 col-sm-12">
+                <div class="row">
+                    <h4>Payment Session ID</h4>
+                    <div class="col">
+                        <textarea name="" id="paymentSessionId" class="form-control"></textarea>
+                        <span class="form-text text-muted">Don't have a paymentSessionId? Get a sample one <a href="https://test.cashfree.com/pgappsdemos/sample-psi.php" target="_blank">here</a> for sandbox mode</span>
+                    </div>
+                </div>
+
+                <div class="row mt-3">
+                    <h4>Return URL <span class="badge h6 bg-danger">Required</span></h4>
+                    <div class="col">
+                        <textarea name="" id="returnUrl" class="form-control">https://test.cashfree.com/pgappsdemos/v3success.php?myorder={order_id}</textarea>
+                        <span class="form-text text-muted">Don't have a paymentSessionId? Get a sample one <a href="https://test.cashfree.com/pgappsdemos/sample-psi.php" target="_blank">here</a> for sandbox mode</span>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col ">
+                        <p class="alert" id="paymentMessage">
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-lg-4 col-sm-10">
+                <div class=" ">
+                    <div class="card w-100"  >
+                        <div class="card-body w-100 pb-0">
+                            <h5 class="card-title">
+                                Checkout
+                            </h5>
+
+                            <div class="row">
+                                <div class="col-12 bank col" bfor="qr">
+                                    <button class="btn btn-block btn-full w-100 btn-primary" id="checkout">
+                                        Submit
+                                    </button>
+                                </div>
+                                 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script src="https://sdk.cashfree.com/js/v3/cashfree.js"></script>
+    <script>
+        const cashfree = Cashfree({mode:"sandbox"});
+        const paymentMessage = document.getElementById("paymentMessage");
+        document.getElementById("checkout").addEventListener("click", function(){
+            paymentMessage.innerText = "";
+            paymentMessage.classList.remove("alert-danger");
+            paymentMessage.classList.remove("alert-success");
+            cashfree.checkout({
+                paymentSessionId: document.getElementById("paymentSessionId").value,
+                returnUrl: document.getElementById("returnUrl").value,
+                redirectTarget: "_blank"
+            }).then(function(){
+                console.log("on going redirection");
+            });
+        })
+    </script>
+</body>
+
+</html>
