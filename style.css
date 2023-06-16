@@ -18,7 +18,7 @@ body {
   font-family: "Poppins", sans-serif;
   font-size: 15px;
   font-weight: normal;
-  color: hsl(0, 0%, 90%);
+  color: hsl(0, 0%, 20%);
 }
 
 @font-face {
@@ -38,6 +38,34 @@ body {
   -ms-flex: 0 0 20%;
   flex: 0 0 20%;
   max-width: 20%;
+}
+
+/*------------------------------------------------------------
+# Authentication
+------------------------------------------------------------*/
+.center-parent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+@media screen and (min-width: 300px) {
+  .center-child {
+    margin: 20px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .center-child {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .center-child {
+    width: 22rem;
+  }
 }
 
 /*------------------------------------------------------------

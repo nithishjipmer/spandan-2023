@@ -1,12 +1,13 @@
 function register(val) {
-  const prevPath = `auth.html?path=${val}`;
-  console.log(prevPath);
+  const authPath = `auth.html?path=${val}`;
+  console.log(authPath);
   firebase.auth().onAuthStateChanged((user) => {
     if (user) {
-      var uid = user.uid;
+        // user already signed in so send to payment page
       window.location.assign("esports.html");
     } else {
-      window.location.assign(prevPath);
+        // user not signed in 
+      window.location.assign(authPath);
     }
   });
 }
