@@ -22,11 +22,21 @@
             </div>
 
             <div class="inputBox">
-                <input type="text" id="collegeName" placeholder="College Name" />
+                <input list="collegeList" id="collegeName" onforminput="filterColleges()"  placeholder="College Name" />
+                <datalist id="collegeList">
+                   
+                  </datalist>
             </div>
 
             <div class="inputBox">
-                <input type="number" id="year" placeholder="Year of study" />
+                <!-- <input type="number" id="year" placeholder="Year of study" /> -->
+                <select id="year" name="year">
+                    <option selected value="1">1st year</option>
+                    <option value="2">2nd year</option>
+                    <option value="3">3rd year</option>
+                    <option value="4">4th year</option>
+                    <option value="5">5th year</option>
+                </select>
             </div>
             <div class="inputBox">
                 <button type="submit">Submit</button>
