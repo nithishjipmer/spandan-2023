@@ -29,9 +29,11 @@
         .bank:nth-child(1) {
             /* border-right: 1px solid #efefef; */
         }
+
         .bank:nth-child(5) {
             border-right: 1px solid #efefef;
         }
+
         .bank:nth-child(7) {
             border-right: 1px solid #efefef;
         }
@@ -47,10 +49,12 @@
         .bank {
             cursor: pointer;
         }
-        .gradient{
-            background-image: linear-gradient( 83.2deg,  rgba(150,93,233,1) 10.8%, rgba(99,88,238,1) 94.3% );
+
+        .gradient {
+            background-image: linear-gradient(83.2deg, rgba(150, 93, 233, 1) 10.8%, rgba(99, 88, 238, 1) 94.3%);
         }
-        .container{
+
+        .container {
             border-radius: 20px;
             position: absolute;
             top: 50%;
@@ -59,13 +63,10 @@
             padding: 20px;
             border: 1px solid #ddd;
         }
-         
-        h4{
+
+        h4 {
             color: rgba(0, 0, 0, 0.5);
         }
-         
-         
-        
     </style>
 </head>
 
@@ -89,15 +90,20 @@
                     <h4>Payment Session ID</h4>
                     <div class="col">
                         <textarea name="" id="paymentSessionId" class="form-control"></textarea>
-                        <span class="form-text text-muted">Don't have a paymentSessionId? Get a sample one <a href="https://test.cashfree.com/pgappsdemos/sample-psi.php" target="_blank">here</a> for sandbox mode</span>
+                        <span class="form-text text-muted">Don't have a paymentSessionId? Get a sample one <a
+                                href="https://test.cashfree.com/pgappsdemos/sample-psi.php" target="_blank">here</a> for
+                            sandbox mode</span>
                     </div>
                 </div>
 
                 <div class="row mt-3">
                     <h4>Return URL <span class="badge h6 bg-danger">Required</span></h4>
                     <div class="col">
-                        <textarea name="" id="returnUrl" class="form-control">https://test.cashfree.com/pgappsdemos/v3success.php?myorder={order_id}</textarea>
-                        <span class="form-text text-muted">Don't have a paymentSessionId? Get a sample one <a href="https://test.cashfree.com/pgappsdemos/sample-psi.php" target="_blank">here</a> for sandbox mode</span>
+                        <textarea name="" id="returnUrl"
+                            class="form-control">https://test.cashfree.com/pgappsdemos/v3success.php?myorder={order_id}</textarea>
+                        <span class="form-text text-muted">Don't have a paymentSessionId? Get a sample one <a
+                                href="https://test.cashfree.com/pgappsdemos/sample-psi.php" target="_blank">here</a> for
+                            sandbox mode</span>
                     </div>
                 </div>
                 <div class="row mt-4">
@@ -110,8 +116,8 @@
             </div>
             <div class="col col-lg-4 col-sm-10">
                 <div class=" ">
-                    <div class="card w-100"  >
-                        <div class="card-body w-100 pb-0">
+                    <div class="card w-100">
+                        <div class="card-body w-100 pb-0" style="">
                             <h5 class="card-title">
                                 Checkout
                             </h5>
@@ -122,7 +128,7 @@
                                         Submit
                                     </button>
                                 </div>
-                                 
+
                             </div>
                         </div>
                     </div>
@@ -133,9 +139,9 @@
     </div>
     <script src="https://sdk.cashfree.com/js/v3/cashfree.js"></script>
     <script>
-        const cashfree = Cashfree({mode:"sandbox"});
+        const cashfree = Cashfree({ mode: "sandbox" });
         const paymentMessage = document.getElementById("paymentMessage");
-        document.getElementById("checkout").addEventListener("click", function(){
+        document.getElementById("checkout").addEventListener("click", function () {
             paymentMessage.innerText = "";
             paymentMessage.classList.remove("alert-danger");
             paymentMessage.classList.remove("alert-success");
@@ -143,9 +149,12 @@
                 paymentSessionId: document.getElementById("paymentSessionId").value,
                 returnUrl: document.getElementById("returnUrl").value,
                 redirectTarget: "_blank"
-            }).then(function(){
+            }).then(function () {
                 console.log("on going redirection");
             });
+
+
+
         })
     </script>
 </body>
